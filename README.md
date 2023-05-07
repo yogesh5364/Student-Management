@@ -1,4 +1,5 @@
 # Student Management System
 Simple Project using Python, Flask, HTML, CSS
 
-Main Page : StudentManagement.py
+Main Page (Code) : StudentManagement.py
+Main Page (HTML) : StudentManagement_Base.html
