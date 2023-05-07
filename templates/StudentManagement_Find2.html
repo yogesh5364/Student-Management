@@ -1,0 +1,111 @@
+{% extends "StudentManagement_Base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td {
+            border: 5px solid black;
+            font-size: 17px;
+            font-family:Comic Sans MS;
+        }
+
+        body {
+        background-image: url("../static/bg.jpg");
+        background-color: #cccccc;
+        background-size: 1500px 650px;
+        }
+
+        input[type=number], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+
+        input[type=text], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+
+        input[type=email], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        
+        input[type=submit] {
+        width: 15%;
+        background-color: #C2B59B;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        
+        input[type=submit]:hover {
+        background-color: #9F9F9F;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <center>
+            <h1><p><i><b> You Have </b></i></p></h1>
+            <h1><p><i><b> Successfully </b></i></p></h1>
+            <h1><p><i><b> Finded...!!! </b></i></p></h1>
+        </center>
+    </div><br>
+
+    <center>
+        <table border = 2>
+            <thead>
+                <th><br> &nbsp; Std ID &nbsp; <br><br></th>	
+                <th><br> &nbsp; &nbsp; &nbsp; Name <br><br></th>
+                <th><br> &nbsp; Age  &nbsp; <br><br></th>
+                <th><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email ID <br><br></th> 
+                <th><br> &nbsp; &nbsp; Phone No. <br><br></th>
+                <th><br> &nbsp; &nbsp; &nbsp; &nbsp; Address <br><br></th>
+                <th><br> &nbsp; &nbsp; &nbsp; Courses <br><br></th>
+            </thead>
+            
+            {% for row in rows %}
+                <tr>
+                    <td>&nbsp; &nbsp; &nbsp; &nbsp;{{row['Sid']}} &nbsp;</td>
+                    <td>&nbsp; &nbsp;{{row["Name"]}} &nbsp; &nbsp;</td>
+                    <td>&nbsp; &nbsp;{{row['Age']}}</td>
+                    <td>&nbsp; &nbsp;{{row['Email']}} &nbsp; &nbsp;</td>
+                    <td>&nbsp; &nbsp;{{row['PhoneNo']}}  &nbsp; &nbsp;</td>
+                    <td>&nbsp; &nbsp;{{row["Address"]}} &nbsp; &nbsp;</td>
+                    <td>&nbsp; &nbsp;{{row["Course"]}}  &nbsp; &nbsp;</td>	
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
+
+{% endblock %}
