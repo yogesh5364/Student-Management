@@ -1,0 +1,75 @@
+{% extends "StudentManagement_Base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+        background-image: url("../static/bg.jpg");
+        background-color: #cccccc;
+        background-size: 1500px 650px;
+        }
+        input[type=text], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        
+        input[type=submit] {
+        width: 15%;
+        background-color: #C2B59B;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        
+        input[type=submit]:hover {
+        background-color: #9F9F9F;
+        }
+        
+        font {
+            font-family:Comic Sans MS;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: left;padding-left: 50px;">
+        <img src="{{url_for('static', filename='StudentManagement.jpg')}}" height="400px" width="700px"></img>
+    </div><br><br><br><br><br>
+
+    <div id=font style="float: left;padding-left: 140px;">
+        <center>
+            <p><b><i><font size="10" > Remove </font size></i></b></p>
+            <p><b><i><font size="10"> Students </font size></i></b></p>
+        </center>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div>
+        <center>
+            <form action = "{{ url_for('RemoveStudent') }}" method="post">
+                <p><i><b><h4> &nbsp; &nbsp; Sid :- &nbsp; &nbsp; <input type="text" name="s"> </h4></b></i></p>
+                <p><i><b><h6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="submit" value="Remove"> </h6></b></i></p>
+            </form>
+
+            <form action = "{{ url_for('RemoveStudentByEmail') }}" method="post">
+                <p><i><b><h4> Email :- &nbsp; &nbsp; <input type="text" name="e"> </h4></b></i></p>
+                <p><i><b><h6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="submit" value="Remove"> </h6></b></i></p>
+            </form>
+        </center>
+    </div>
+</body>
+</html>
+
+{% endblock %}

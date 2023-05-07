@@ -1,0 +1,87 @@
+{% extends "StudentManagement_Base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        input[type=number], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        input[type=text], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        input[type=email], select {
+        width: 35%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        
+        input[type=submit] {
+        width: 15%;
+        background-color: #C2B59B;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family:Comic Sans MS;
+        text-shadow:5px 5px 10px black;
+        }
+        
+        input[type=submit]:hover {
+        background-color: #9F9F9F;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: left;padding-left: 50px;">
+            <img src="{{url_for('static', filename='StudentManagement.jpg')}}" height="400px" width="700px" align="left"></img>
+    </div><br><br><br><br><br>
+
+    <div style="float: left;padding-left: 140px;">
+        <center>
+            <p><b><i><font size="8"> Add </font size></i></b></p>
+            <p><b><i><font size="8"> Students </font size></i></b></p>
+        </center>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <form action = "{{ url_for('AddStudent') }}" method="post" method="get">
+        <center>
+            <p><i><b><h5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Std ID :- &nbsp; <input type="number" name="s"> </h5></b></i></p>
+            <p><i><b><h5> &nbsp; &nbsp; &nbsp; &nbsp; Name :-  &nbsp; &nbsp; <input type="text" name="n"> </h5></b></i></p>
+            <p><i><b><h5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Age :- &nbsp; &nbsp; &nbsp; <input type="number" name="a"> </b></i></h5></p>
+            <p><i><b><h5> &nbsp; &nbsp; &nbsp; Email ID :-  &nbsp; <input type="email" name = "e"> </h5></b></i></p>
+            <p><i><b><h5> &nbsp; &nbsp; Phone No :- &nbsp; <input type="number" name="p"> </h5></b></i></p>
+            <p><i><b><h5> &nbsp; &nbsp; &nbsp; Address :-  &nbsp; &nbsp; <input type="text" name="ad"> </h5></b></i></p>
+            <p><i><b><h5> &nbsp; &nbsp; &nbsp; Course :-  &nbsp; &nbsp; &nbsp; <input type="text" name="c"> </h5></b></i></p>
+            <center><p><i><b><h5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="submit" value="Submit">  </h5></b></i></p></center>
+        </center>
+    </form>
+</body>
+</html>
+
+{% endblock %}
